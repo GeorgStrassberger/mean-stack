@@ -1,3 +1,6 @@
+@if (false) {
+<mat-spinner></mat-spinner>
+} @else {
 <mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-expansion-panel *ngFor="let post of posts">
     <mat-expansion-panel-header>
@@ -7,8 +10,8 @@
     </mat-expansion-panel-header>
     <p>{{ post.content }}</p>
     <mat-action-row>
-      <button mat-button color="primary" (click)="onEdit()">Edit</button>
-      <button mat-button color="warn" (click)="onDelete(post.id)">
+      <a mat-button color="primary" [routerLink]="['/edit', post.id]">Edit</a>
+      <button mat-button color="warn" (click)="onDelete(post.id!)">
         Delete
       </button>
     </mat-action-row>
@@ -17,3 +20,4 @@
 <p class="mat-body-1 info-text" *ngIf="posts.length <= 0">
   No post's added yet!
 </p>
+}
