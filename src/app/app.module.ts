@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgxPrintModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -36,7 +38,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
