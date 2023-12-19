@@ -3,11 +3,17 @@
 } @else {
 <mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-expansion-panel *ngFor="let post of posts">
+    <!-- TITLE -->
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{ post.title }}
       </mat-panel-title>
     </mat-expansion-panel-header>
+    <!-- IMAGE -->
+    <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title" />
+    </div>
+    <!-- CONTENT -->
     <p>{{ post.content }}</p>
     <mat-action-row>
       <a mat-button color="primary" [routerLink]="['/edit', post.id]">Edit</a>
