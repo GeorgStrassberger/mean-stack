@@ -1,7 +1,7 @@
-@if (false) {
+@if (posts.length > 0 && isLoading) {
 <mat-spinner></mat-spinner>
 } @else {
-<mat-accordion multi="true" *ngIf="posts.length > 0">
+<mat-accordion multi="true">
   <mat-expansion-panel *ngFor="let post of posts">
     <!-- TITLE -->
     <mat-expansion-panel-header>
@@ -23,7 +23,18 @@
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
+@if (posts.length > 0) {
+<mat-paginator
+  [length]="totalPosts"
+  [pageSize]="postsPerPage"
+  [pageSizeOptions]="pageSizeOptions"
+  aria-label="Select page"
+  (page)="onChangedPage($event)"
+>
+</mat-paginator
+>}
 <p class="mat-body-1 info-text" *ngIf="posts.length <= 0">
   No post's added yet!
 </p>
+
 }
